@@ -3,7 +3,10 @@
     background-color: rgb(243, 243, 243);
     display: block;
     margin: 20px 10px;
-    border-left: 8px solid rgb(184, 22, 22)
+    border-left: 8px solid rgb(184, 22, 22);
+    width: 100%;
+    
+
 }
 .li{
     list-style-type: none;
@@ -13,10 +16,12 @@
     border-left: 8px solid black;
 }
 
+
+
 .navbar{
     width: 100%;
     height: 80px;
-    position: static;
+    position:static;
     top: 0;
     background: #E62129;
     z-index: 1;
@@ -77,7 +82,55 @@
  .content{
      margin: 0 25px;
  }
+ .content1{
+  margin: 0 25px;
+}
 
  .content img{
     width: 250px;
  }
+ .title{
+   margin-left: 20px;
+ }
+
+ @media (max-width: 765px){
+  .container{
+    width: 0;
+    margin: 0;
+  }
+
+  .single{ width: 300px;
+ }
+.header{
+  width: 300px;
+}
+.content{
+  width: 300px;
+}
+
+}
+
+
+
+ @media (min-width:768px) and (max-width: 1024px){
+  .container{
+    width: 0;
+    margin:0;
+    align-items: center;
+    
+  }
+    .single{
+      width: 700px;
+    }
+
+    .content{
+      width: 700px;
+    }
+    .header{
+      width: 700px;
+    }
+   
+    
+  }
+
+ 

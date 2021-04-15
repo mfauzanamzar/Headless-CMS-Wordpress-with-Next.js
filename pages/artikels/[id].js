@@ -1,5 +1,7 @@
 import Navbar from "../../components/Navbar";
 import styles from '../../styles/Artikels.module.css';
+import Skeleton from 'react-loading-skeleton';
+
 
 export const getStaticPaths = async () => {
     const res = await fetch('http://unhas.ac.id/v2/wp-json/wp/v2/posts?');
@@ -35,13 +37,13 @@ const Details = ({ninja}) => {
         <div >
             <Navbar/>
             <div className={styles.container}>
-            <h1 className={styles.header}>{ninja.title.rendered}</h1>
+            <h1 className={styles.header}>{ninja.title.rendered || <Skeleton />}</h1>
             
             <div
           className={styles.content}
           dangerouslySetInnerHTML={ {
             __html: ninja.content.rendered
-          } } />
+           || <Skeleton count={15} /> } } />
            </div>
         </div>
       

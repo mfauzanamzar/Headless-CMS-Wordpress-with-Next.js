@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles/Artikels.module.css';
-import logoImage from '../images/logo.png';
 
 export default function Navbar() {
     return (
@@ -8,7 +7,7 @@ export default function Navbar() {
         <div className={styles.navbar_container}>
           <ul className={styles.navbar_left}>
             <div className={styles.navbar_left_logo}>
-            <img src={logoImage} alt="logo" />
+           
             </div>
           </ul>
           <ul className={styles.navbar_right}>
