@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import styles from '../../styles/Artikels.module.css';
 import Skeleton from 'react-loading-skeleton';
+import { useEffect, useState } from "react";
 
 
 export const getStaticPaths = async () => {
@@ -33,22 +34,35 @@ export const getStaticProps = async (context) => {
 } 
 
 const Details = ({ninja}) => {
+    const[ninjax, setNinja] = useState(null)
+
+    useEffect(()=>{
+       setTimeout(async() =>{
+        setNinja(ninja);
+    }, 1000)
+    })
+
     return ( 
         <div >
             <Navbar/>
             <div className={styles.container}>
-            <h1 className={styles.header}>{ninja.title.rendered || <Skeleton />}</h1>
+            {ninjax && (<div>
+            <h1 className={styles.header}>{ninjax.title.rendered}</h1>
             
             <div
-          className={styles.content}
+          className={styles.content1}
           dangerouslySetInnerHTML={ {
-            __html: ninja.content.rendered
-           || <Skeleton count={15} /> } } />
+            __html: ninjax.content.rendered
+            } } />
            </div>
-        </div>
-      
-     );
-     
+           )}
+            {!ninjax && <div>
+        <div className={styles.skeletontitle2}></div>
+        <div className={styles.skeletontext2}></div>
+        </div>}
+            </div>
+            </div>
+        );
 }
  
 export default Details ;
