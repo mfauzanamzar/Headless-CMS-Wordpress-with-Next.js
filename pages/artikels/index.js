@@ -42,7 +42,7 @@ const Artikels = ({art}) => {
           <a  className={styles.single}>
             <h3>{ar.title.rendered} </h3>
             <article
-          className={styles.content1}
+          className={styles.content}
           dangerouslySetInnerHTML={ {
             __html: ar.excerpt.rendered
           } } />
