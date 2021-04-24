@@ -1,7 +1,8 @@
 import Navbar from "../../components/Navbar";
 import styles from '../../styles/Artikels.module.css';
-import Skeleton from 'react-loading-skeleton';
 import { useEffect, useState } from "react";
+import Sidebar from "../../components/Sidebar";
+
 
 
 export const getStaticPaths = async () => {
@@ -11,7 +12,7 @@ export const getStaticPaths = async () => {
     
     const paths = data.map(ninja => {
         return{
-            params: { id: ninja.id.toString() }
+            params: { id: ninja.id.toString()}
         }
     })
 
@@ -33,6 +34,7 @@ export const getStaticProps = async (context) => {
 
 } 
 
+
 const Details = ({ninja}) => {
     const[ninjax, setNinja] = useState(null)
 
@@ -47,13 +49,23 @@ const Details = ({ninja}) => {
             <Navbar/>
             <div className={styles.container}>
             {ninjax && (<div>
-            <h1 className={styles.header}>{ninjax.title.rendered}</h1>
+                <h1 className={styles.header}>{ninjax.title.rendered}</h1>
+                <div className={styles.row}>
+        <div className={styles.col_2}>  
+      
             
             <div
           className={styles.content1}
           dangerouslySetInnerHTML={ {
             __html: ninjax.content.rendered
             } } />
+           </div>
+           <div className={styles.col_1}>
+      <div className={styles.sidebar}>
+           <Sidebar/>
+           </div>
+           </div>
+           </div>
            </div>
            )}
             {!ninjax && <div>
