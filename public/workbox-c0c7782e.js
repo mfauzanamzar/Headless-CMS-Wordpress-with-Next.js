@@ -1,7 +1,7 @@
-define("./workbox-6b19f60b.js",['exports'], function (exports) { 'use strict';
+define("./workbox-c0c7782e.js",['exports'], function (exports) { 'use strict';
 
     try {
-      self['workbox:core:6.1.5'] && _();
+      self['workbox:core:6.1.2'] && _();
     } catch (e) {}
 
     /*
@@ -476,7 +476,7 @@ define("./workbox-6b19f60b.js",['exports'], function (exports) { 'use strict';
     };
 
     try {
-      self['workbox:routing:6.1.5'] && _();
+      self['workbox:routing:6.1.2'] && _();
     } catch (e) {}
 
     /*
@@ -998,8 +998,6 @@ define("./workbox-6b19f60b.js",['exports'], function (exports) { 'use strict';
        *
        * @param {Object} options
        * @param {URL} options.url
-       * @param {boolean} options.sameOrigin The result of comparing `url.origin`
-       *     against the current origin.
        * @param {Request} options.request The request to match.
        * @param {Event} options.event The corresponding event.
        * @return {Object} An object with `route` and `params` properties.
@@ -1282,7 +1280,7 @@ define("./workbox-6b19f60b.js",['exports'], function (exports) { 'use strict';
     }
 
     try {
-      self['workbox:strategies:6.1.5'] && _();
+      self['workbox:strategies:6.1.2'] && _();
     } catch (e) {}
 
     /*
@@ -2698,4 +2696,4 @@ define("./workbox-6b19f60b.js",['exports'], function (exports) { 'use strict';
     exports.registerRoute = registerRoute;
 
 });
-//# sourceMappingURL=workbox-6b19f60b.js.map
+//# sourceMappingURL=workbox-c0c7782e.js.map
