@@ -10,3 +10,6 @@ module.exports = withPWA({
 
   },
 });
+
+const withImages = require('next-images')
+module.exports = withImages({}) 
