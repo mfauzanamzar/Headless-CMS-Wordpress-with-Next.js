@@ -4,6 +4,7 @@ import styles from '../styles/Artikels.module.css';
 export default function Navbar() {
     return (
         <div className={styles.navbar}>
+          
         <div className={styles.navbar_container}>
           <ul className={styles.navbar_left}>
             <div className={styles.navbar_left_logo}>
@@ -22,5 +23,6 @@ export default function Navbar() {
           
         </div>
         </div>
+       
     )
 }

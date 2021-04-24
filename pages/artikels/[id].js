@@ -1,6 +1,8 @@
 import Navbar from "../../components/Navbar";
 import styles from '../../styles/Artikels.module.css';
-import Skeleton from 'react-loading-skeleton';
+import { useEffect, useState } from "react";
+import Sidebar from "../../components/Sidebar";
+
 
 
 export const getStaticPaths = async () => {
@@ -10,7 +12,7 @@ export const getStaticPaths = async () => {
     
     const paths = data.map(ninja => {
         return{
-            params: { id: ninja.id.toString() }
+            params: { id: ninja.id.toString()}
         }
     })
 
@@ -32,23 +34,47 @@ export const getStaticProps = async (context) => {
 
 } 
 
+
 const Details = ({ninja}) => {
+    const[ninjax, setNinja] = useState(null)
+
+    useEffect(()=>{
+       setTimeout(async() =>{
+        setNinja(ninja);
+    }, 1000)
+    })
+
     return ( 
         <div >
             <Navbar/>
             <div className={styles.container}>
-            <h1 className={styles.header}>{ninja.title.rendered || <Skeleton />}</h1>
+            {ninjax && (<div>
+                <h1 className={styles.header}>{ninjax.title.rendered}</h1>
+                <div className={styles.row}>
+        <div className={styles.col_2}>  
+      
             
             <div
-          className={styles.content}
+          className={styles.content1}
           dangerouslySetInnerHTML={ {
-            __html: ninja.content.rendered
-           || <Skeleton count={15} /> } } />
+            __html: ninjax.content.rendered
+            } } />
            </div>
-        </div>
-      
-     );
-     
+           <div className={styles.col_1}>
+      <div className={styles.sidebar}>
+           <Sidebar/>
+           </div>
+           </div>
+           </div>
+           </div>
+           )}
+            {!ninjax && <div>
+        <div className={styles.skeletontitle2}></div>
+        <div className={styles.skeletontext2}></div>
+        </div>}
+            </div>
+            </div>
+        );
 }
  
 export default Details ;
