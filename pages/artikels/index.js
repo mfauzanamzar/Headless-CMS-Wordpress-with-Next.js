@@ -4,6 +4,8 @@ import Navbar from '../../components/Navbar';
 import { useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar';
 import Moment from 'react-moment'
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 
 
@@ -23,7 +25,7 @@ const Artikels = ({ art }) => {
   const [arx, setArt] = useState(null)
 
   useEffect(() => {
-    setTimeout(async () => {
+    setTimeout(async () => { Aos.init({duration:2000})
       setArt(art);
     }, 1000)
   })
@@ -44,7 +46,7 @@ const Artikels = ({ art }) => {
 
               {arx.map(ar => (
                 <div key={ar.id}>
-                  <a className={styles.single}>
+                  <a data-aos="fade-right" className={styles.single}>
                     <div className={styles.tgl}>
                       <Moment format="dddd, D MMMM YYYY">
                         {ar.date}
@@ -83,7 +85,7 @@ const Artikels = ({ art }) => {
             </div>
 
             <div className={styles.col_1}>
-              <div className={styles.sidebar}>
+              <div data-aos="fade-down-left" className={styles.sidebar}>
                 <Sidebar />
               </div>
             </div>
@@ -91,11 +93,18 @@ const Artikels = ({ art }) => {
         </div>
       )}
 
-      {!arx && [1, 2, 3, 4, 5, 6].map(n => (
-        <div>
+        {!arx && [1, 2, 3, 4, 5, 6].map(n => (
+        <div className={styles.row}>
+        <div className={styles.col_5}>
           <div className={styles.skeletontitle}></div>
           <div className={styles.skeletontext}></div>
         </div>
+        <div className={styles.col_6}>
+          <div className={styles.skeletonnavbar}></div>
+          <div className={styles.skeletonnavbar}></div>
+          <div className={styles.skeletonnavbar}></div>
+        </div>
+      </div>
       ))}
     </div>
 
