@@ -16,21 +16,21 @@
 
 .skeletontext{
   background: #ddd;
-  width: 52%;
+  width: 79%;
   height: 275px;
-  margin: 20px 40px;
+  margin: 20px 5px;
   border-radius: 4px;
-  margin-left: 200px;
+  margin-left: 180px;
 }
 
 .skeletontitle{
   background: #ddd;
-  width: 50%;
-  height: 35px;
-  margin: 20px 35px;
+  width: 78%;
+  height: 40px;
+  margin: 20px 10px;
   border-radius: 4px;
-  margin-left: 170px;
-  margin-top: 35px;
+  margin-left: 167px;
+  margin-top: 25px;
 }
 .skeletontitle2{
   background: #ddd;
@@ -43,15 +43,35 @@
 
 .skeletontext2{
   background: #ddd;
-  width: 55%;
+  width: 80%;
   height: 500px;
   margin: 20px 40px;
   border-radius: 4px;
-  margin-left: 88px;
-  margin-top: 50px;
+  margin-left: 100px;
+  margin-top: 15px;
 }
+.skeletonnavbar{
+  background: #ddd;
+  width: 67%;
+  height: 98px;
+  border-radius: 4px;
+  margin-top: 25px;
+}  
+.skeletonnavbar2{
+  background: #ddd;
+  width: 82%;
+  height: 98px;
+  border-radius: 4px;
+  margin-top: 25px;
+  margin-left: 55px;
+}
+  .col_5{
+  width: 68%;
+}
+.col_6{
+  width: 32%;
 
-
+}
 
 .single {
     padding: 2px 16px;
