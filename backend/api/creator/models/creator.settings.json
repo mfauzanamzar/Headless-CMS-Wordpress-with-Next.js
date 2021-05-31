@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "creators",
+  "info": {
+    "name": "creator"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "nim": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "bidang": {
+      "type": "string",
+      "required": true
+    },
+    "gambar": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}
