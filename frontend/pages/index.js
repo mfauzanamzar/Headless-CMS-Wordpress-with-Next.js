@@ -1,8 +1,11 @@
 import Head from 'next/head'
+import {url} from '../config/next.config'
 import Navbar from '../components/Navbar'
-import styles from '../styles/Artikels.module.css'
+import styles from '../styles/Home.module.css'
+import Card from '../components/Card'
 
-export default function Home() {
+
+export default function Home({list}) {
   
   return (
     
@@ -18,12 +21,26 @@ export default function Home() {
       </div>
       <div className={styles.main}>
         <div className={styles.kotak}>Created by </div>
-        <h3>1. Jabalnur</h3>
-        <h3>2. Muhammad Fauzan Amzar</h3>
-        <h3>3. Muh. Ishak Ramadhan</h3>
+        <div className={styles.flexing}>
+          {list.map(item => (
+            <Card key={item.id} item={item}/>
+          ))}
+        </div>
       </div>
 
  
     </div>
   )
 }
+
+export const getStaticProps = async () => {
+  const data = await fetch(`${url}/creators`);
+  const list = await data.json();
+
+  return {
+    props: {
+      list,
+    },
+    revalidate: 1, 
+  };
+};
