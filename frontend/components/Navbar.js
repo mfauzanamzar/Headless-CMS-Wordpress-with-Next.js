@@ -19,6 +19,9 @@ export default function Navbar() {
           <li>
             <a href="/artikels">Artikels</a>
           </li>
+          <li>
+            <a href="/personal">Personal</a>
+          </li>
 
         </ul>
 

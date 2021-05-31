@@ -26,7 +26,7 @@ function Card({item}) {
 }
 
  const CardStyled = styled.div`
-    width: 400px;
+    width: 350px;
     border: 1px solid #cccccc;
     margin-top: 30px;
     margin-left: 25px;

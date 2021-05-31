@@ -20,12 +20,7 @@ export default function Home({list}) {
         <h1>Selamat Datang!</h1>
       </div>
       <div className={styles.main}>
-        <div className={styles.kotak}>Created by </div>
-        <div className={styles.flexing}>
-          {list.map(item => (
-            <Card key={item.id} item={item}/>
-          ))}
-        </div>
+      <a href="/artikels" className={styles.kotak}>Ayo Membaca Kawan</a>
       </div>
 
  

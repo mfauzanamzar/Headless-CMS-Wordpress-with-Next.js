@@ -13,11 +13,11 @@
   margin-top: 20px;
 }
 .coba{
-  width: 400px;
+  width: 350px;
   margin-bottom: 50px;
 }
 .coba2{
-  width: 400px;
+  width: 350px;
   height: 200px;
 }
 .button{
@@ -47,6 +47,7 @@
 .flexing{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .kotak{
   background-color: #E62129;
@@ -55,7 +56,9 @@
   color: white;
   border-radius: 25px;
 }
-
+.kotak:hover{
+  color: white;
+}
 .skeletontext{
   background: #ddd;
   width: 79%;
