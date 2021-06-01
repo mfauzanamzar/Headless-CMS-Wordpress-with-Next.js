@@ -36,6 +36,11 @@ const personal = ({ art }) => {
             <Card key={item.id} item={item} />
           ))}
         </div>
+        <div className={styles.tambahMarginTop}>
+          <a href={'/personal/tambah'} className={styles.kotak} >
+            Tambah
+          </a>
+        </div>
       </div>
 
 
