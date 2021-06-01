@@ -1,31 +1,31 @@
 import styled from '@emotion/styled'
-import {url} from '../config/next.config'
-import styles from '../styles/Home.module.css'
+import { url } from '../config/next.config'
+import styles from '../styles/Artikels.module.css'
 
-function Card({item}) {
-     return (
-         <CardStyled>
+function Card({ item }) {
+    return (
+        <CardStyled>
             <div>
-            <div className={styles.coba2}>
-                <div className="poster">
-                    <img src={url+item.gambar[0].formats.medium.url} alt="" className={styles.coba}/>
+                <div className={styles.coba2}>
+                    <div className="poster">
+                        <img src={url + item.gambar[0].formats.medium.url} alt="" className={styles.coba} />
+                    </div>
                 </div>
-            </div>
             </div>
             <div className={styles.putih}>
-            <div>
-                <div className="body">
-                    <h5>{item.nama}</h5>
-                    <h6>{item.nim}</h6>
-                    <p dangerouslySetInnerHTML={{__html: item.bidang}}/>
+                <div>
+                    <div >
+                        <h5>{item.nama}</h5>
+                        <h6>{item.nim}</h6>
+                        <p dangerouslySetInnerHTML={{ __html: item.bidang }} />
+                    </div>
                 </div>
             </div>
-            </div>
-         </CardStyled>
-     )
+        </CardStyled>
+    )
 }
 
- const CardStyled = styled.div`
+const CardStyled = styled.div`
     width: 350px;
     border: 1px solid #cccccc;
     margin-top: 30px;
@@ -47,4 +47,4 @@ function Card({item}) {
  `
 
 
- export default Card
+export default Card
