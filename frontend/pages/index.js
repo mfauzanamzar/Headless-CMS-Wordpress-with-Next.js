@@ -1,12 +1,33 @@
 import Head from 'next/head'
 import {url} from '../config/next.config'
 import Navbar from '../components/Navbar'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Artikels.module.css'
 import Card from '../components/Card'
+import {isMobile} from 'react-device-detect';
+import {useEffect} from 'react'
+import {useRouter} from 'next/router'
 
 
-export default function Home({list}) {
+export default function Home() {
   
+  const router = useRouter()
+
+  if(isMobile) {
+   
+      useEffect(() => {
+      
+        router.push('/m.index')
+       }, [])
+      
+      
+        return (
+        <div>redirect to web for mobile.....</div>)
+          
+    
+}
+  
+
+
   return (
     
     <div>
@@ -27,15 +48,3 @@ export default function Home({list}) {
     </div>
   )
 }
-
-export const getStaticProps = async () => {
-  const data = await fetch(`${url}/creators`);
-  const list = await data.json();
-
-  return {
-    props: {
-      list,
-    },
-    revalidate: 1, 
-  };
-};
