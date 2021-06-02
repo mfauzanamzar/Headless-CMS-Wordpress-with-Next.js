@@ -9,20 +9,14 @@ import { useEffect, useState } from 'react';
 import "aos/dist/aos.css";
 import axios from 'axios';
 import  { Redirect, Router } from 'react-router-dom';
-
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 
 const {publicRuntimeConfig } = getConfig();
-function kembali(){
-    const router = useRouter();
-    useEffect(() =>{
-        setTimeout(async() =>{
-            router.push('/personal');
-        }, 1000)
-    })
-}
 function tambah (){
+  
 
   const router = useRouter();
   useEffect(() => {
@@ -34,6 +28,11 @@ function tambah (){
   const [nimm, setNim] = useState('')
   const [bidangg, setBidang] = useState('')
   const [gambarr, setGambar] = useState('')
+  const enabled =
+    namaa.length > 0 &&
+    nimm.length > 0 &&
+    bidangg.length > 0 &&
+    gambarr.length > 0;
 
   async function tambah() {
 
@@ -47,7 +46,9 @@ function tambah (){
         .then(response => {
             console.log(response);
         });
-
+        toast.configure()
+        toast.dark ('Data Berhasil Ditambah',{position:toast.POSITION.TOP_CENTER})
+        
         //useEffect(() =>{
         //    setTimeout(() =>{
                 router.push('/personal');
@@ -61,9 +62,7 @@ function tambah (){
       <Navbar />
       <Head>
         <title>Tambah Creator</title>
-
       </Head>
-
       <div data-aos="fade-right" className={styles.main}>
         <AddPersonStyled>
             <div className={styles.coba2}>
@@ -80,7 +79,7 @@ function tambah (){
                     placeholder="Bidang" /><br />
                     <input type="file"  onChange={e => setGambar(e.target.value) } value ={gambarr}
                     placeholder="gambar" /><br />
-                    <button type="button" onClick={() => tambah()}>Add Person</button>
+                    <button type="button" onClick={() => tambah()} disabled={!enabled}>Add Person</button>
                 </form>
             </div>
         </AddPersonStyled>
