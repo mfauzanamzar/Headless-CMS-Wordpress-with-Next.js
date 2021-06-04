@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 const personal = ({ art }) => {
   useEffect(() => {
     setTimeout(async () => {

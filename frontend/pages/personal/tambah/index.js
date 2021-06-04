@@ -11,8 +11,7 @@ import axios from 'axios';
 import  { Redirect, Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
-import 'react-toastify/dist/ReactToastify.css'
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 const {publicRuntimeConfig } = getConfig();
 function tambah (){
@@ -35,6 +34,17 @@ function tambah (){
     gambarr.length > 0;
 
   async function tambah() {
+   const formElement = document.querySelector('form');
+
+  formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const request = new XMLHttpRequest();
+
+    request.open('POST', '/upload');
+
+    request.send(new FormData(formElement));
+  });
 
     axios
         .post(`${url}/creators`, {
@@ -65,21 +75,23 @@ function tambah (){
       </Head>
       <div data-aos="fade-right" className={styles.main}>
         <AddPersonStyled>
-            <div className={styles.coba2}>
-                <h2>
-                    Tambah Creator
-                </h2>
-
-                <form> 
-                    <input type="text" onChange={e => setNama(e.target.value) } value ={namaa}
-                    placeholder="Nama" /><br />
-                    <input type="text" onChange={e => setNim(e.target.value) } value ={nimm} 
-                    placeholder="NIM" /><br />
-                    <input type="text" onChange={e => setBidang(e.target.value) } value ={bidangg}
-                    placeholder="Bidang" /><br />
-                    <input type="file"  onChange={e => setGambar(e.target.value) } value ={gambarr}
-                    placeholder="gambar" /><br />
-                    <button type="button" onClick={() => tambah()} disabled={!enabled}>Add Person</button>
+                 <div className={styles.loginbox}>
+                 <h2>Tambah Creator</h2>
+                 <form >
+                   <div className={styles.userbox}>
+                    <input type="text" onChange={e => setNama(e.target.value) } value ={namaa} placeholder="Masukkan Nama"/><label>Nama</label></div>
+                    <div className={styles.userbox}>
+                    <input type="text" onChange={e => setNim(e.target.value) } value ={nimm} placeholder="Masukkan Nama" /><label>NIM</label></div>
+                    <div className={styles.userbox}>
+                    <input type="text" onChange={e => setBidang(e.target.value) } value ={bidangg} placeholder="Masukkan Nama"/><label>Bidang</label> </div>
+                    <div className={styles.userbox}>
+                    <input type="file"  onChange={e => setGambar(e.target.value) } value ={gambarr} placeholder="gambar"/><label>Gambar</label><br /></div>
+                    <button type="button" onClick={() => tambah()} disabled={!enabled}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Add Person</button>
                 </form>
             </div>
         </AddPersonStyled>
