@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "aboutuses",
+  "info": {
+    "name": "aboutus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tentangweb": {
+      "type": "text"
+    },
+    "creator": {
+      "type": "text"
+    }
+  }
+}

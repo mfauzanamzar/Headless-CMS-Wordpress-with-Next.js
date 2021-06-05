@@ -44,6 +44,10 @@
   align-items: center;
 }
 
+.putih{
+  color: red;
+}
+
 .flexing{
   display: flex;
   justify-content: center;
