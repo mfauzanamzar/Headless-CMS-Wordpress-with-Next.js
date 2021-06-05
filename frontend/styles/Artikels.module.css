@@ -53,14 +53,19 @@
   justify-content: center;
   align-items: center;
 }
-
-
+.tambahMarginTop{
+  margin-top: 30px;
+}
 .kotak{
   background-color: #E62129;
   padding: 15px 50px;
   font-weight: bold;
   color: white;
   border-radius: 25px;
+}
+
+.kotak:hover{
+  color: white;
 }
 
 .skeletontext{
@@ -299,9 +304,6 @@ padding: 40px;
   padding-top: 10px;
 }
 
-.padding{
-  
-}
 
 
  .col_2{
@@ -626,9 +628,162 @@ padding: 40px;
   .navbar_righthidden{
     width: 320px;
   }
- }
+}
+.loginbox {
+  position: absolute;
+  top: 120%;
+  left: 39%;
+  width: 311px;
+  padding: 40px;
+  background-color: #E62129;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.loginbox h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
 
 
- 
+.loginbox .userbox {
+  position: relative;
+}
 
+.loginbox .userbox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.loginbox .userbox label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.loginbox .userbox input:focus ~ label,
+.loginbox .userbox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color:snow;
+  font-size: 12px;
+}
+
+.loginbox form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: snow;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.loginbox button:hover {
+  background: snow;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 5px snow,
+              0 0 25px snow,
+              0 0 50px snow,
+              0 0 100px snow
+}
+
+.loginbox button span {
+  position: absolute;
+  display: block;
+}
+
+.loginbox button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, snow);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.loginbox button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, snow);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.loginbox button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, snow);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.loginbox button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, snow);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
 

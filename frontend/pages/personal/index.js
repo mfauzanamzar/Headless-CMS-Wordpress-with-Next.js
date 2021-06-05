@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 const personal = ({ art }) => {
   useEffect(() => {
     setTimeout(async () => {
@@ -35,6 +36,11 @@ const personal = ({ art }) => {
           {art.map(item => (
             <Card key={item.id} item={item} />
           ))}
+        </div>
+        <div className={styles.tambahMarginTop}>
+          <a href={'/personal/tambah'} className={styles.kotak} >
+            Tambah
+          </a>
         </div>
       </div>
 
