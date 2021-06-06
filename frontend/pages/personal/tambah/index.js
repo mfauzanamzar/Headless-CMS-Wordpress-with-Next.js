@@ -8,7 +8,6 @@ import Aos from 'aos';
 import { useEffect, useState } from 'react';
 import "aos/dist/aos.css";
 import axios from 'axios';
-import  { Redirect, Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
@@ -26,12 +25,10 @@ function tambah (){
   const [namaa, setNama] = useState('')
   const [nimm, setNim] = useState('')
   const [bidangg, setBidang] = useState('')
-  const [gambarr, setGambar] = useState('')
   const enabled =
     namaa.length > 0 &&
     nimm.length > 0 &&
-    bidangg.length > 0 &&
-    gambarr.length > 0;
+    bidangg.length > 0;
 
   async function tambah() {
    const formElement = document.querySelector('form');
@@ -50,8 +47,7 @@ function tambah (){
         .post(`${url}/creators`, {
             nama: namaa,
             nim: nimm,
-            bidang: bidangg,
-            gambar: gambarr 
+            bidang: bidangg
         })
         .then(response => {
             console.log(response);
@@ -84,8 +80,6 @@ function tambah (){
                     <input type="text" onChange={e => setNim(e.target.value) } value ={nimm} placeholder="Masukkan Nama" /><label>NIM</label></div>
                     <div className={styles.userbox}>
                     <input type="text" onChange={e => setBidang(e.target.value) } value ={bidangg} placeholder="Masukkan Nama"/><label>Bidang</label> </div>
-                    <div className={styles.userbox}>
-                    <input type="file"  onChange={e => setGambar(e.target.value) } value ={gambarr} placeholder="gambar"/><label>Gambar</label><br /></div>
                     <button type="button" onClick={() => tambah()} disabled={!enabled}>
                       <span></span>
                       <span></span>

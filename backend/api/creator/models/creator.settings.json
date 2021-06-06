@@ -24,16 +24,6 @@
     "bidang": {
       "type": "string",
       "required": true
-    },
-    "gambar": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {}
     }
   }
 }
