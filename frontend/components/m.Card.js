@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 function Card({ item }) {
     return (
         <Kotak>
-                 <a href={'/personal/' + item.id} key={item.id} >
+                 <a href={'/m.personal/' + item.id} key={item.id} >
             <h5>{item.nama}</h5>
             <h6>{item.nim}</h6>
             <p dangerouslySetInnerHTML={{ __html: item.bidang }} />   
